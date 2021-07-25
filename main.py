@@ -11,6 +11,7 @@ client = discord.Client()
 
 letters = []
 guesses = []
+message_count = 0
 
 def generateWord():
     return random.get_random_word(hasDictionaryDef = "true")
@@ -22,8 +23,10 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = ""
+   
+    message_count += 1
 
-    if message.content.lower() == "$play":
+    if message.content.lower() == "$play" and message_count == 1:
         await message.channel.send("Welcome to Hangman")
         letters = []
         guesses = []
@@ -103,5 +106,6 @@ async def on_message(message):
                 count += 1
         msg = str("Your word was " + word + ". It means" + meaning_str)
         await message.channel.send(msg)
+        message_count = 0
 
 client.run(TOKEN)
