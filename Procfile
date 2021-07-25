@@ -1,1 +1,1 @@
-worker: python main.py
+worker: python hangman-discord-bot.py
