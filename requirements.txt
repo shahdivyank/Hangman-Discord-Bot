@@ -1,4 +1,4 @@
-discord
+discord.py
 pyyaml
 PyDictionary
 Random-Word
