@@ -71,7 +71,9 @@ async def on_message(message):
                 if word == guessWord[1]:
                     await message.channel.send("Congratulations you guessed the word right!")
                     break
-            if not guess.isalpha() or len(guess) > 1:
+                else:
+                    await message.channel.send("That was not correct!")
+            if not guess.isalpha() or len(guess) > 1 and not guess.startswith("$guess"):
                 await message.channel.send("Please only enter single letters.")
                 continue
             guesses.append(guess)
