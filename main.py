@@ -23,7 +23,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = ""
-   
+    
+    global message_count
     message_count += 1
 
     if message.content.lower() == "$play" and message_count == 1:
