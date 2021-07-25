@@ -1,8 +1,3 @@
-#pip install Random-Word
-#pip install pyyaml
-#pip install PyDictionary
-#pip install discord
-
 from random_word import RandomWords
 from PyDictionary import PyDictionary
 import discord
