@@ -66,6 +66,11 @@ async def on_message(message):
             if guess in guesses:
                 await message.channel.send("You Have Already Guessed the letter " + guess)
                 continue
+            if guess.startswith("$guess"):
+                guessWord = guess.split()
+                if word == guessWord[1]:
+                    await message.channel.send("Congratulations you guessed the word right!")
+                    break
             if not guess.isalpha() or len(guess) > 1:
                 await message.channel.send("Please only enter single letters.")
                 continue
@@ -82,7 +87,7 @@ async def on_message(message):
                 msg = str("Try Again. You have " + str(lives) + " wrong guesses before GAME OVER!")
                 await message.channel.send(msg)
             if "-" not in letters:
-                await message.channel.send("Congratulations you guessed the word right!")
+                await message.channel.send("Congratulations you got it!")
                 break
 
         partsOfSpeechs = ["Verb", "Noun", "Adjective"]
