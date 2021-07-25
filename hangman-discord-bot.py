@@ -17,10 +17,6 @@ def generateWord():
     return random.get_random_word(hasDictionaryDef = "true")
 
 @client.event
-async def on_ready():
-   print("Active")
-
-@client.event
 async def on_message(message):
     channel = ""
     
@@ -43,7 +39,6 @@ async def on_message(message):
             word = generateWord()
         for letter in word:
             letters.append("-")
-        print(word)
 
         def check(m):
             return len(m.content) >= 1 and m.channel == channel
