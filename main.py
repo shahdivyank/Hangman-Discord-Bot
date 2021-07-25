@@ -32,6 +32,7 @@ async def on_message(message):
         await message.channel.send("Welcome to Hangman")
         letters = []
         guesses = []
+        display = ""
         channel = message.channel
         word = generateWord()
         while True:
