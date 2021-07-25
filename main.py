@@ -30,6 +30,8 @@ async def on_message(message):
 
     if message.content.lower() == "$play":
         await message.channel.send("Welcome to Hangman")
+        letters = []
+        guesses = []
         channel = message.channel
         word = generateWord()
         while True:
