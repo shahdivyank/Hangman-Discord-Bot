@@ -24,7 +24,7 @@ async def on_message(message):
     message_count += 1
 
     if message.content.lower() == "$play" and message_count == 1:
-        await message.channel.send("Welcome to Hangman")
+        await message.channel.send("Welcome to Hangman Adventures! Once prompted enter a letter you think is in the mystery word! Type $guess your_guess to guess the entire word!")
         letters = []
         guesses = []
         display = ""
