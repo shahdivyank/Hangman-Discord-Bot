@@ -105,7 +105,7 @@ async def guess(ctx, guess_letter:str):
     elif lives == 0:
         await ctx.send("Better luck next time!")
     else:
-        await ctx.send("Incorrect Guess.\n" + display.join(letters) + "\nYou have " + str(lives) + "lives left. " + "Enter a letter:")
+        await ctx.send("Incorrect Guess.\n" + display.join(letters) + "\nYou have " + str(lives) + " lives left. " + "Enter a letter:")
         guesses.append(guess_letter)
         lives -= 1
 
