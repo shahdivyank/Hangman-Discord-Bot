@@ -7,7 +7,6 @@ client = commands.Bot(command_prefix="!")
 
 random = RandomWords()
 dictionary = PyDictionary()
-# client = discord.Client()
 
 letters = []
 guesses = []
@@ -78,7 +77,6 @@ async def playHangman(ctx):
         await ctx.send(display.join(letters) + "\nEnter a letter:")
     else:
         await ctx.send("A game is already in progress. Enter !end to stop the game!")
-
 
 @client.command()
 async def guess(ctx, guess_letter:str):
