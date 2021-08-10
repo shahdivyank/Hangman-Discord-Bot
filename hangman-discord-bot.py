@@ -90,7 +90,7 @@ async def guess(ctx, guess_letter:str):
         await ctx.send("Enter letters only")
     elif guess_letter in guesses:
         await ctx.send("You Have Already Guessed the letter " + guess_letter)
-    elif guess_letter.strip().lower() in word:
+    elif guess_letter.strip().lower() in word.lower():
         index = 0
         for letter in word:
             if letter == guess_letter:
